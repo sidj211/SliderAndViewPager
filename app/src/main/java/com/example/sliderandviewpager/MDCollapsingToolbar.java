@@ -39,15 +39,20 @@ public class MDCollapsingToolbar extends AppCompatActivity {
 
         // study this code for the transparency of the status bar
 
-      /*  getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+      /*
+
 
 */
+
+        getWindow().setStatusBarColor(getResources().getColor(R.color.colorTransparent));
+
         setContentView(R.layout.activity_mdcollapsing_toolbar);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         viewPager = (ViewPager) findViewById(R.id.viewPager_id);

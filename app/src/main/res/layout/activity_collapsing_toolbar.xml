@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    app:statusBarBackground="@android:color/transparent"
-    tools:context=".MDCollapsingToolbar">
+    android:fitsSystemWindows="true"
+    tools:context=".CollapsingToolbarActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_height="240dp"
+        android:layout_height="wrap_content"
         android:id="@+id/app_bar_layout"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         >
@@ -25,28 +24,23 @@
             app:expandedTitleMarginEnd="50dp"
             app:expandedTitleMarginStart="50dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-           >
+            android:fitsSystemWindows="true">
 
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager_id"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/python_banner"
                 android:fitsSystemWindows="true"
-                android:layout_below="@+id/toolbar" />
-
-            <me.relex.circleindicator.CircleIndicator
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_margin="10dp"
-                android:id="@+id/circle_id"
-                android:layout_below="@id/toolbar"
-                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                android:contentDescription="about"
                 />
+
+
+
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_collapsing"
                 app:layout_collapseMode="pin"
                 />
 
@@ -55,10 +49,13 @@
 
 
 
-    </com.google.android.material.appbar.AppBarLayout>
 
 
 
 
+
+
+
+</com.google.android.material.appbar.AppBarLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
